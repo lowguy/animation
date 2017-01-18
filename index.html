@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="./src/style/animate.css">
+</head>
+<body>
+<div class="container">
+    <div class="section"></div>
+    <div class="desc">
+        <h3 id="desc-title"></h3>
+    </div>
+</div>
+<script>
+    var $ = window.$ || function(id){
+                return document.getElementById(id);
+            }
+    showTitle();
+    var num = 0;
+    function showTitle(){
+        var descArr = ['一开始我是拒绝的','后来他说我很帅','我就授权了'];
+        setTimeout(function(){
+            $('desc-title').innerText = descArr[num%3];
+            num++;
+            showTitle();
+        },1000)
+    }
+</script>
+</body>
+</html>
